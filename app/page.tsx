@@ -8,7 +8,6 @@ type Slide = {
   title: string;
   copy: string;
   image: string;
-  accent: string;
 };
 
 const slides: Slide[] = [
@@ -18,7 +17,6 @@ const slides: Slide[] = [
     title: "Explore curated collections",
     copy: "Find shoot ideas by mood, place, pose, and moment.",
     image: "/assets/slide-collections.jpg",
-    accent: "#83d9ce",
   },
   {
     id: "poses",
@@ -26,7 +24,6 @@ const slides: Slide[] = [
     title: "Pick a reference that feels right",
     copy: "Save the angle, stance, and framing before you shoot.",
     image: "/assets/slide-poses.jpg",
-    accent: "#d75cec",
   },
   {
     id: "overlay",
@@ -34,7 +31,6 @@ const slides: Slide[] = [
     title: "Match the composition live",
     copy: "Use a transparent guide to line up the shot faster.",
     image: "/assets/slide-overlay.jpg",
-    accent: "#7b61ff",
   },
   {
     id: "result",
@@ -42,7 +38,6 @@ const slides: Slide[] = [
     title: "Get the photo you pictured",
     copy: "From reference to camera roll with less trial and error.",
     image: "/assets/slide-result.jpg",
-    accent: "#ff8ab9",
   },
   {
     id: "travel",
@@ -50,7 +45,6 @@ const slides: Slide[] = [
     title: "Spend less time searching",
     copy: "Keep moving and capture the moment while it is still yours.",
     image: "/assets/slide-travel.jpg",
-    accent: "#ffd166",
   },
 ];
 
@@ -68,6 +62,36 @@ const features = [
     copy: "Know where to stand, how to angle, and when the composition is close enough.",
   },
 ];
+
+const storeButtons = [
+  {
+    label: "Get ReCreate on Google Play",
+    image: "/assets/google-play-badge.svg",
+    href: "#download",
+  },
+  {
+    label: "Download ReCreate on the App Store",
+    image: "/assets/app-store-badge.svg",
+    href: "#download",
+  },
+];
+
+function StoreActions({ className = "" }: { className?: string }) {
+  return (
+    <div className={`store-actions ${className}`.trim()}>
+      {storeButtons.map((button) => (
+        <a
+          className="store-badge-button"
+          href={button.href}
+          key={button.label}
+          aria-label={button.label}
+        >
+          <img src={button.image} alt="" aria-hidden="true" />
+        </a>
+      ))}
+    </div>
+  );
+}
 
 function PhoneDemo() {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -108,9 +132,7 @@ function PhoneDemo() {
           <div className="camera-cutout" aria-hidden="true" />
 
           <div className="phone-caption">
-            <span style={{ backgroundColor: activeSlide.accent }}>
-              {activeSlide.collection}
-            </span>
+            <span>{activeSlide.collection}</span>
             <strong>{activeSlide.title}</strong>
             <p>{activeSlide.copy}</p>
           </div>
@@ -209,18 +231,7 @@ export default function Home() {
             composition.
           </p>
 
-          <div className="hero-actions">
-            <a className="store-button" href="#download">
-              <span className="play-mark" aria-hidden="true" />
-              <span>
-                <small>GET IT ON</small>
-                Google Play
-              </span>
-            </a>
-            <a className="text-button" href="#demo">
-              See how it works
-            </a>
-          </div>
+          <StoreActions className="hero-actions" />
 
           <div className="hero-points" aria-label="ReCreate highlights">
             <span>Curated ideas</span>
@@ -290,13 +301,7 @@ export default function Home() {
           <p className="eyebrow">Ready when the moment is</p>
           <h2 id="download-title">Spend less time searching. More time living.</h2>
         </div>
-        <a className="store-button store-button-light" href="#top">
-          <span className="play-mark" aria-hidden="true" />
-          <span>
-            <small>GET IT ON</small>
-            Google Play
-          </span>
-        </a>
+        <StoreActions className="download-actions" />
       </section>
     </main>
   );

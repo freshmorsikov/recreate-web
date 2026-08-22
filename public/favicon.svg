@@ -1,5 +1,12 @@
 <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="recreateAccent" x1="29" y1="9" x2="39" y2="19" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#DC7DD3"/>
+      <stop offset="0.52" stop-color="#A65DCC"/>
+      <stop offset="1" stop-color="#9F82F8"/>
+    </linearGradient>
+  </defs>
   <rect width="48" height="48" rx="14" fill="#07021F"/>
   <path d="M15 33V15H25.7C29.9 15 32.7 17.5 32.7 21.1C32.7 23.7 31.3 25.6 28.9 26.5L34 33H28.2L23.8 27.2H20.1V33H15ZM20.1 23.1H25.2C26.7 23.1 27.6 22.4 27.6 21.2C27.6 20 26.7 19.3 25.2 19.3H20.1V23.1Z" fill="#FFFFFF"/>
-  <circle cx="34" cy="14" r="5" fill="#D75CEC"/>
+  <circle cx="34" cy="14" r="5" fill="url(#recreateAccent)"/>
 </svg>
