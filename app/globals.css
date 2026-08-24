@@ -87,18 +87,12 @@ img {
 }
 
 .brand-mark {
-  align-items: center;
-  background:
-    linear-gradient(var(--foreground), var(--foreground)) padding-box,
-    var(--accent-gradient) border-box;
-  border: 2px solid transparent;
-  border-radius: 14px;
-  color: #ffffff;
-  display: inline-flex;
-  font-size: 17px;
-  height: 38px;
-  justify-content: center;
-  width: 38px;
+  border-radius: 12px;
+  box-shadow: 0 10px 22px rgba(7, 2, 31, 0.18);
+  flex: 0 0 auto;
+  height: 42px;
+  object-fit: contain;
+  width: 42px;
 }
 
 .site-header nav {

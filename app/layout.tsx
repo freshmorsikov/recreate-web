@@ -10,6 +10,7 @@ const basePath = normalizeBasePath(
 const siteUrl = normalizeSiteUrl(
   process.env.NEXT_PUBLIC_SITE_URL ?? "https://example.com",
 );
+const logoPath = "/assets/recreate-logo.webp";
 
 function normalizeBasePath(value: string | undefined) {
   const normalized = value?.trim().replace(/\/+$/, "") ?? "";
@@ -45,8 +46,8 @@ export const metadata: Metadata = {
   description,
   metadataBase: new URL(`${siteUrl}/`),
   icons: {
-    icon: withBasePath("/favicon.svg"),
-    shortcut: withBasePath("/favicon.svg"),
+    icon: [{ url: withBasePath(logoPath), type: "image/webp" }],
+    shortcut: [{ url: withBasePath(logoPath), type: "image/webp" }],
   },
   openGraph: {
     title,

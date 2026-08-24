@@ -208,7 +208,12 @@ export default function Home() {
     <main className="site-shell">
       <header className="site-header">
         <a className="brand" href="#top" aria-label="ReCreate home">
-          <span className="brand-mark">R</span>
+          <img
+            className="brand-mark"
+            src="assets/recreate-logo.webp"
+            alt=""
+            aria-hidden="true"
+          />
           <span>ReCreate</span>
         </a>
         <nav aria-label="Primary navigation">
