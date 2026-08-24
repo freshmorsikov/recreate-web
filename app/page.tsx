@@ -16,35 +16,35 @@ const slides: Slide[] = [
     collection: "Trending",
     title: "Explore curated collections",
     copy: "Find shoot ideas by mood, place, pose, and moment.",
-    image: "/assets/slide-collections.jpg",
+    image: "assets/slide-collections.jpg",
   },
   {
     id: "poses",
     collection: "Pose",
     title: "Pick a reference that feels right",
     copy: "Save the angle, stance, and framing before you shoot.",
-    image: "/assets/slide-poses.jpg",
+    image: "assets/slide-poses.jpg",
   },
   {
     id: "overlay",
     collection: "Overlay",
     title: "Match the composition live",
     copy: "Use a transparent guide to line up the shot faster.",
-    image: "/assets/slide-overlay.jpg",
+    image: "assets/slide-overlay.jpg",
   },
   {
     id: "result",
     collection: "City",
     title: "Get the photo you pictured",
     copy: "From reference to camera roll with less trial and error.",
-    image: "/assets/slide-result.jpg",
+    image: "assets/slide-result.jpg",
   },
   {
     id: "travel",
     collection: "Travel",
     title: "Spend less time searching",
     copy: "Keep moving and capture the moment while it is still yours.",
-    image: "/assets/slide-travel.jpg",
+    image: "assets/slide-travel.jpg",
   },
 ];
 
@@ -66,12 +66,12 @@ const features = [
 const storeButtons = [
   {
     label: "Get ReCreate on Google Play",
-    image: "/assets/google-play-badge.svg",
+    image: "assets/google-play-badge.svg",
     href: "#download",
   },
   {
     label: "Download ReCreate on the App Store",
-    image: "/assets/app-store-badge.svg",
+    image: "assets/app-store-badge.svg",
     href: "#download",
   },
 ];
