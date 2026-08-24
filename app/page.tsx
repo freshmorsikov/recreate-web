@@ -225,7 +225,6 @@ export default function Home() {
 
       <section className="hero-section" id="top">
         <div className="hero-copy">
-          <p className="eyebrow">Photo inspiration + overlay camera</p>
           <h1>
             Recreate photos
             <span> you love</span>
@@ -237,12 +236,6 @@ export default function Home() {
           </p>
 
           <StoreActions className="hero-actions" />
-
-          <div className="hero-points" aria-label="ReCreate highlights">
-            <span>Curated ideas</span>
-            <span>Live overlay</span>
-            <span>Better framing</span>
-          </div>
         </div>
 
         <PhoneDemo />
