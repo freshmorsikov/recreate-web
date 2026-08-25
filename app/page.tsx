@@ -222,7 +222,7 @@ export default function Home() {
           <span>ReCreate</span>
         </a>
         <nav aria-label="Primary navigation">
-          <a href="#demo">Demo</a>
+          <a href="#faq">FAQ</a>
           <a href="#features">Features</a>
           <a href="#download">Get the app</a>
         </nav>
@@ -246,31 +246,68 @@ export default function Home() {
         <PhoneDemo />
       </section>
 
-      <section className="demo-section" id="demo" aria-labelledby="demo-title">
-        <div className="section-copy">
-          <p className="eyebrow">From idea to photo</p>
-          <h2 id="demo-title">A reference you can actually shoot with.</h2>
-          <p>
-            ReCreate turns inspiration into a live camera guide, so matching the
-            original photo feels natural instead of like guesswork.
-          </p>
+      <section className="faq-section" id="faq" aria-labelledby="faq-title">
+        <div className="section-copy faq-intro">
+          <h1 id="faq-title">Frequently asked questions</h1>
         </div>
 
-        <div className="step-grid">
+        <div className="faq-list">
           <article>
-            <span>01</span>
-            <h3>Browse</h3>
-            <p>Open collections built around poses, locations, and photo moods.</p>
+            <h2>What is ReCreate?</h2>
+            <p>
+              ReCreate helps you recreate photos you love. Pick a reference
+              photo, open the camera, and use the transparent overlay to match
+              the pose, angle, framing, and composition.
+            </p>
           </article>
           <article>
-            <span>02</span>
-            <h3>Choose</h3>
-            <p>Pick the reference that matches the shot you want to recreate.</p>
+            <h2>Who is ReCreate for?</h2>
+            <p>
+              ReCreate is for everyone who wants to take better photos without
+              awkward posing, endless retakes, or trying to explain the exact
+              shot they have in mind. Whether you&apos;re taking photos of your
+              partner, friends, or yourself, ReCreate helps turn inspiration
+              into a photo you can actually recreate.
+            </p>
           </article>
           <article>
-            <span>03</span>
-            <h3>Align</h3>
-            <p>Use the transparent overlay to match angle, pose, and composition.</p>
+            <h2>How does ReCreate work?</h2>
+            <p>
+              Choose a photo you want to recreate, then open it in
+              ReCreate&apos;s camera. The reference appears as a transparent
+              overlay, helping you position the camera and subject more
+              accurately.
+            </p>
+          </article>
+          <article>
+            <h2>Can I use my own reference photos?</h2>
+            <p>
+              Yes. You can use your own photo inspiration and recreate the shot
+              with ReCreate.
+            </p>
+          </article>
+          <article>
+            <h2>Does ReCreate include photo ideas?</h2>
+            <p>
+              Yes. You can explore curated collections of photo ideas for
+              different situations, locations, and moods, then recreate the ones
+              you like.
+            </p>
+          </article>
+          <article>
+            <h2>Do I need someone else to take the photo?</h2>
+            <p>
+              Not necessarily. ReCreate can help whether someone else is taking
+              your photo or you&apos;re setting up the shot yourself. The
+              overlay makes it much easier to explain exactly what you want.
+            </p>
+          </article>
+          <article>
+            <h2>Is ReCreate free?</h2>
+            <p>
+              ReCreate includes free functionality, with additional features
+              available through ReCreate Pro.
+            </p>
           </article>
         </div>
       </section>

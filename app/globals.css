@@ -143,6 +143,7 @@ img {
 }
 
 .hero-copy h1,
+.section-copy h1,
 .section-copy h2,
 .download-section h2 {
   letter-spacing: 0;
@@ -405,7 +406,7 @@ img {
   box-shadow: 0 0 0 2px #ffffff, 0 0 0 4px var(--accent-solid);
 }
 
-.demo-section,
+.faq-section,
 .feature-section,
 .download-section {
   margin: 0 auto;
@@ -413,17 +414,18 @@ img {
   padding: 84px clamp(18px, 4vw, 40px);
 }
 
-.demo-section {
+.faq-section {
   border-top: 1px solid var(--line);
   display: grid;
-  gap: 48px;
-  grid-template-columns: 0.82fr 1.18fr;
+  gap: 28px;
+  grid-template-columns: 1fr;
 }
 
 .section-copy {
   max-width: 560px;
 }
 
+.section-copy h1,
 .section-copy h2,
 .download-section h2 {
   font-size: clamp(34px, 5vw, 58px);
@@ -438,17 +440,43 @@ img {
   margin: 20px 0 0;
 }
 
-.step-grid,
+.faq-intro {
+  align-self: start;
+  max-width: none;
+  width: 100%;
+}
+
+.faq-list {
+  display: grid;
+  gap: 16px;
+}
+
+.faq-list article {
+  background: rgba(255, 255, 255, 0.78);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 26px;
+}
+
+.faq-list h2 {
+  font-size: clamp(22px, 3vw, 30px);
+  font-weight: 950;
+  line-height: 1.12;
+  margin: 0;
+}
+
+.faq-list p {
+  color: var(--muted);
+  font-size: 17px;
+  line-height: 1.62;
+  margin: 14px 0 0;
+}
+
 .feature-grid {
   display: grid;
   gap: 14px;
 }
 
-.step-grid {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-}
-
-.step-grid article,
 .feature-grid article {
   background: rgba(255, 255, 255, 0.78);
   border: 1px solid var(--line);
@@ -456,18 +484,6 @@ img {
   padding: 22px;
 }
 
-.step-grid span {
-  background: var(--accent-gradient);
-  background-clip: text;
-  color: transparent;
-  display: block;
-  -webkit-background-clip: text;
-  font-size: 13px;
-  font-weight: 950;
-  margin-bottom: 34px;
-}
-
-.step-grid h3,
 .feature-grid h3 {
   font-size: 21px;
   font-weight: 950;
@@ -475,7 +491,6 @@ img {
   margin: 0;
 }
 
-.step-grid p,
 .feature-grid p {
   color: var(--muted);
   font-size: 15px;
@@ -543,7 +558,7 @@ img {
 
 @media (max-width: 980px) {
   .hero-section,
-  .demo-section {
+  .faq-section {
     grid-template-columns: 1fr;
   }
 
@@ -615,20 +630,15 @@ img {
     font-size: 9px;
   }
 
-  .demo-section,
+  .faq-section,
   .feature-section,
   .download-section {
     padding-bottom: 64px;
     padding-top: 64px;
   }
 
-  .step-grid,
   .feature-grid {
     grid-template-columns: 1fr;
-  }
-
-  .step-grid span {
-    margin-bottom: 20px;
   }
 
   .download-section {
