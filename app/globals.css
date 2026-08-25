@@ -244,9 +244,10 @@ img {
 .phone-screen::after {
   background: linear-gradient(
     180deg,
-    rgba(7, 2, 31, 0.3) 0%,
-    transparent 30%,
-    transparent 52%,
+    rgba(7, 2, 31, 0.68) 0%,
+    rgba(7, 2, 31, 0.48) 18%,
+    rgba(7, 2, 31, 0.14) 42%,
+    transparent 58%,
     rgba(7, 2, 31, 0.78) 100%
   );
   content: "";
@@ -289,40 +290,18 @@ img {
 .phone-caption {
   color: #ffffff;
   left: 24px;
-  max-width: calc(100% - 48px);
   position: absolute;
   right: 24px;
   top: 72px;
   z-index: 3;
 }
 
-.phone-caption span {
-  background: var(--accent-gradient);
-  border-radius: 999px;
-  color: #ffffff;
-  display: inline-flex;
-  font-size: 12px;
-  font-weight: 950;
-  margin-bottom: 10px;
-  padding: 6px 10px;
-}
-
 .phone-caption strong {
   display: block;
-  font-size: 23px;
-  font-weight: 950;
+  font-size: 25px;
+  font-weight: 600;
   letter-spacing: 0;
-  line-height: 1.02;
-  max-width: 260px;
-}
-
-.phone-caption p {
-  color: rgba(255, 255, 255, 0.82);
-  font-size: 13px;
-  font-weight: 700;
-  line-height: 1.4;
-  margin: 9px 0 0;
-  max-width: 260px;
+  line-height: 1.08;
 }
 
 .phone-nav {
@@ -656,11 +635,7 @@ img {
   }
 
   .phone-caption strong {
-    font-size: 20px;
-  }
-
-  .phone-caption p {
-    display: none;
+    font-size: 21px;
   }
 
   .phone-nav {

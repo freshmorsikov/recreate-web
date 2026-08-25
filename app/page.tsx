@@ -1,12 +1,11 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { Fragment, useEffect, useState } from "react";
 
 type Slide = {
   id: string;
   collection: string;
-  title: string;
-  copy: string;
+  title: string[];
   image: string;
 };
 
@@ -14,29 +13,25 @@ const slides: Slide[] = [
   {
     id: "browse",
     collection: "Browse",
-    title: "Explore curated collections",
-    copy: "Start from a visual board of photo ideas you can recreate.",
+    title: ["Explore curated photo collections"],
     image: "assets/recreate-step-1.jpg",
   },
   {
     id: "overlay",
     collection: "Overlay",
-    title: "Line up the reference",
-    copy: "Use the guide to match the pose, angle, and framing.",
+    title: ["Match the shot for the perfect photo"],
     image: "assets/recreate-step-2.jpg",
   },
   {
     id: "pose",
     collection: "Pose",
-    title: "Match the moment",
-    copy: "See what the final shot should feel like while you shoot.",
+    title: ["From idea to photo in one tap"],
     image: "assets/recreate-step-3.jpg",
   },
   {
     id: "result",
     collection: "Shot",
-    title: "Get the photo you pictured",
-    copy: "From inspiration to camera roll with less trial and error.",
+    title: ["Spend less time searching and more time living"],
     image: "assets/recreate-step-4.jpg",
   },
 ];
@@ -114,20 +109,25 @@ function PhoneDemo() {
             key={activeSlide.id}
             className="phone-photo"
             src={activeSlide.image}
-            alt={`${activeSlide.title} preview`}
+            alt={`${activeSlide.title.join(" ")} preview`}
           />
 
           <div className="phone-status" aria-hidden="true">
-            <span>9:41</span>
+            <span>20:31</span>
             <span className="status-icons">5G</span>
           </div>
 
           <div className="camera-cutout" aria-hidden="true" />
 
           <div className="phone-caption">
-            <span>{activeSlide.collection}</span>
-            <strong>{activeSlide.title}</strong>
-            <p>{activeSlide.copy}</p>
+            <strong>
+              {activeSlide.title.map((line, index) => (
+                <Fragment key={line}>
+                  {index > 0 ? <br /> : null}
+                  {line}
+                </Fragment>
+              ))}
+            </strong>
           </div>
 
           <button
