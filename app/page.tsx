@@ -12,39 +12,32 @@ type Slide = {
 
 const slides: Slide[] = [
   {
-    id: "collections",
-    collection: "Trending",
+    id: "browse",
+    collection: "Browse",
     title: "Explore curated collections",
-    copy: "Find shoot ideas by mood, place, pose, and moment.",
-    image: "assets/slide-collections.jpg",
-  },
-  {
-    id: "poses",
-    collection: "Pose",
-    title: "Pick a reference that feels right",
-    copy: "Save the angle, stance, and framing before you shoot.",
-    image: "assets/slide-poses.jpg",
+    copy: "Start from a visual board of photo ideas you can recreate.",
+    image: "assets/recreate-step-1.jpg",
   },
   {
     id: "overlay",
     collection: "Overlay",
-    title: "Match the composition live",
-    copy: "Use a transparent guide to line up the shot faster.",
-    image: "assets/slide-overlay.jpg",
+    title: "Line up the reference",
+    copy: "Use the guide to match the pose, angle, and framing.",
+    image: "assets/recreate-step-2.jpg",
+  },
+  {
+    id: "pose",
+    collection: "Pose",
+    title: "Match the moment",
+    copy: "See what the final shot should feel like while you shoot.",
+    image: "assets/recreate-step-3.jpg",
   },
   {
     id: "result",
-    collection: "City",
+    collection: "Shot",
     title: "Get the photo you pictured",
-    copy: "From reference to camera roll with less trial and error.",
-    image: "assets/slide-result.jpg",
-  },
-  {
-    id: "travel",
-    collection: "Travel",
-    title: "Spend less time searching",
-    copy: "Keep moving and capture the moment while it is still yours.",
-    image: "assets/slide-travel.jpg",
+    copy: "From inspiration to camera roll with less trial and error.",
+    image: "assets/recreate-step-4.jpg",
   },
 ];
 
