@@ -324,12 +324,10 @@ img {
   z-index: 4;
 }
 
-.phone-nav span {
+.phone-nav svg {
   display: block;
-  font-size: 38px;
-  font-weight: 500;
-  line-height: 0.7;
-  margin-top: -2px;
+  height: 14px;
+  width: 14px;
 }
 
 .phone-nav:hover {
@@ -355,22 +353,6 @@ img {
   position: absolute;
   right: 12px;
   z-index: 5;
-}
-
-.progress-track {
-  background: rgba(7, 2, 31, 0.12);
-  border-radius: 999px;
-  height: 5px;
-  margin: 0 4px 12px;
-  overflow: hidden;
-}
-
-.progress-track span {
-  background: var(--accent-gradient);
-  border-radius: inherit;
-  display: block;
-  height: 100%;
-  transition: width 320ms ease;
 }
 
 .collection-tabs {
@@ -415,38 +397,12 @@ img {
 
 .collection-tab:hover,
 .collection-tab-active {
-  background: #f3e8ff;
   color: var(--foreground);
   transform: translateY(-1px);
 }
 
 .collection-tab-active img {
   box-shadow: 0 0 0 2px #ffffff, 0 0 0 4px var(--accent-solid);
-}
-
-.demo-note {
-  align-items: center;
-  color: var(--muted);
-  display: flex;
-  font-size: 12px;
-  font-weight: 900;
-  gap: 12px;
-  justify-content: center;
-  margin-top: 18px;
-}
-
-.demo-note span {
-  align-items: center;
-  display: inline-flex;
-  gap: 8px;
-}
-
-.demo-note span::before {
-  background: var(--accent-gradient);
-  border-radius: 999px;
-  content: "";
-  height: 7px;
-  width: 7px;
 }
 
 .demo-section,

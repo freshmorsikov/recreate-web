@@ -12,25 +12,25 @@ type Slide = {
 const slides: Slide[] = [
   {
     id: "browse",
-    collection: "Browse",
+    collection: "Explore",
     title: ["Explore curated photo collections"],
     image: "assets/recreate-step-1.jpg",
   },
   {
     id: "overlay",
-    collection: "Overlay",
+    collection: "Match",
     title: ["Match the shot for the perfect photo"],
     image: "assets/recreate-step-2.jpg",
   },
   {
     id: "pose",
-    collection: "Pose",
+    collection: "One tap",
     title: ["From idea to photo in one tap"],
     image: "assets/recreate-step-3.jpg",
   },
   {
     id: "result",
-    collection: "Shot",
+    collection: "Done",
     title: ["Spend less time searching and more time living"],
     image: "assets/recreate-step-4.jpg",
   },
@@ -64,6 +64,8 @@ const storeButtons = [
   },
 ];
 
+const AUTO_SWIPE_DELAY_MS = 10000;
+
 function StoreActions({ className = "" }: { className?: string }) {
   return (
     <div className={`store-actions ${className}`.trim()}>
@@ -86,12 +88,12 @@ function PhoneDemo() {
   const activeSlide = slides[activeIndex];
 
   useEffect(() => {
-    const timer = window.setInterval(() => {
+    const timer = window.setTimeout(() => {
       setActiveIndex((current) => (current + 1) % slides.length);
-    }, 5200);
+    }, AUTO_SWIPE_DELAY_MS);
 
-    return () => window.clearInterval(timer);
-  }, []);
+    return () => window.clearTimeout(timer);
+  }, [activeIndex]);
 
   const showPrevious = () => {
     setActiveIndex((current) => (current - 1 + slides.length) % slides.length);
@@ -136,7 +138,22 @@ function PhoneDemo() {
             onClick={showPrevious}
             aria-label="Previous preview"
           >
-            <span aria-hidden="true">‹</span>
+            <svg
+              aria-hidden="true"
+              width="14"
+              height="14"
+              viewBox="0 0 12 12"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M7 2L3 6L7 10"
+                stroke="#000000"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
           </button>
 
           <button
@@ -145,25 +162,25 @@ function PhoneDemo() {
             onClick={showNext}
             aria-label="Next preview"
           >
-            <span aria-hidden="true">›</span>
+            <svg
+              aria-hidden="true"
+              width="14"
+              height="14"
+              viewBox="0 0 12 12"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M5 2L9 6L5 10"
+                stroke="#000000"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
           </button>
 
           <div className="phone-controls">
-            <div
-              className="progress-track"
-              role="progressbar"
-              aria-label="Preview progress"
-              aria-valuemin={1}
-              aria-valuemax={slides.length}
-              aria-valuenow={activeIndex + 1}
-            >
-              <span
-                style={{
-                  width: `${((activeIndex + 1) / slides.length) * 100}%`,
-                }}
-              />
-            </div>
-
             <div className="collection-tabs" role="tablist" aria-label="Photo collections">
               {slides.map((slide, index) => (
                 <button
@@ -187,11 +204,6 @@ function PhoneDemo() {
         </div>
       </div>
 
-      <div className="demo-note" aria-hidden="true">
-        <span>Reference</span>
-        <span>Overlay</span>
-        <span>Shot</span>
-      </div>
     </div>
   );
 }
