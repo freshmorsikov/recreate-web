@@ -38,16 +38,22 @@ const slides: Slide[] = [
 
 const features = [
   {
-    title: "Curated ideas",
-    copy: "Browse ready-to-recreate photos instead of digging through endless saves.",
+    title: "Find your reference",
+    copy: "Explore curated photo ideas for popular poses and settings, or choose your own reference photo.",
+    image: slides[0].image,
+    imageAlt: "ReCreate photo collection screen with pose reference ideas",
   },
   {
-    title: "Transparent overlay",
-    copy: "Place the reference directly over your camera view to match the pose and framing.",
+    title: "Match it live",
+    copy: "See your reference directly over the camera view and adjust the opacity to match pose, angle, and framing.",
+    image: slides[1].image,
+    imageAlt: "Reference photo overlay aligned on a live camera view",
   },
   {
-    title: "Faster final shot",
-    copy: "Know where to stand, how to angle, and when the composition is close enough.",
+    title: "Get the shot faster",
+    copy: "Capture, save, share, or retake without endless explanations and guesswork.",
+    image: slides[2].image,
+    imageAlt: "Finished recreated photo ready to save or share",
   },
 ];
 
@@ -222,8 +228,8 @@ export default function Home() {
           <span>ReCreate</span>
         </a>
         <nav aria-label="Primary navigation">
-          <a href="#faq">FAQ</a>
           <a href="#features">Features</a>
+          <a href="#faq">FAQ</a>
           <a href="#download">Get the app</a>
         </nav>
       </header>
@@ -235,15 +241,38 @@ export default function Home() {
             <span> you love</span>
           </h1>
           <p className="hero-description">
-            Browse curated photo ideas, pick a reference, and use it as a
-            transparent camera overlay to match the pose, angle, framing, and
-            composition.
+            Find the perfect pose and composition for any photo that inspires
+            you, without endless explanations and retakes.
           </p>
 
           <StoreActions className="hero-actions" />
         </div>
 
         <PhoneDemo />
+      </section>
+
+      <section
+        className="feature-section"
+        id="features"
+        aria-labelledby="features-title"
+      >
+        <div className="section-copy">
+          <h2 id="features-title">Key features</h2>
+        </div>
+
+        <div className="feature-grid">
+          {features.map((feature) => (
+            <article key={feature.title}>
+              <img
+                className="feature-image"
+                src={feature.image}
+                alt={feature.imageAlt}
+              />
+              <h3>{feature.title}</h3>
+              <p>{feature.copy}</p>
+            </article>
+          ))}
+        </div>
       </section>
 
       <section className="faq-section" id="faq" aria-labelledby="faq-title">
@@ -309,26 +338,6 @@ export default function Home() {
               available through ReCreate Pro.
             </p>
           </article>
-        </div>
-      </section>
-
-      <section
-        className="feature-section"
-        id="features"
-        aria-labelledby="features-title"
-      >
-        <div className="section-copy">
-          <p className="eyebrow">Simple by design</p>
-          <h2 id="features-title">Everything points toward the shot.</h2>
-        </div>
-
-        <div className="feature-grid">
-          {features.map((feature) => (
-            <article key={feature.title}>
-              <h3>{feature.title}</h3>
-              <p>{feature.copy}</p>
-            </article>
-          ))}
         </div>
       </section>
 

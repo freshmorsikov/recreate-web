@@ -481,21 +481,21 @@ img {
   background: rgba(255, 255, 255, 0.78);
   border: 1px solid var(--line);
   border-radius: 8px;
-  padding: 22px;
+  padding: 0;
 }
 
 .feature-grid h3 {
   font-size: 21px;
   font-weight: 950;
   line-height: 1.1;
-  margin: 0;
+  margin: 0 22px;
 }
 
 .feature-grid p {
   color: var(--muted);
   font-size: 15px;
   line-height: 1.55;
-  margin: 12px 0 0;
+  margin: 12px 22px 22px;
 }
 
 .feature-section {
@@ -512,14 +512,11 @@ img {
   position: relative;
 }
 
-.feature-grid article::before {
-  background: var(--accent-gradient);
-  content: "";
-  height: 5px;
-  left: 0;
-  position: absolute;
-  right: 0;
-  top: 0;
+.feature-image {
+  aspect-ratio: 1;
+  margin: 0 0 20px;
+  object-fit: cover;
+  width: 100%;
 }
 
 .download-section {
