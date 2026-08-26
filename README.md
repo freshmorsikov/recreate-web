@@ -1,4 +1,4 @@
-# ReCreate Landing Page
+# 📷 ReCreate web
 
 ReCreate is a landing page for a photo app that helps people recreate photos they love. The page explains the app, highlights the main features, answers common questions, and points visitors toward the App Store and Google Play.
 
