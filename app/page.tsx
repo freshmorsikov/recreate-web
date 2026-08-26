@@ -61,12 +61,30 @@ const storeButtons = [
   {
     label: "Get ReCreate on Google Play",
     image: "assets/google-play-badge.svg",
-    href: "#download",
+    href: "#steps",
   },
   {
     label: "Download ReCreate on the App Store",
     image: "assets/app-store-badge.svg",
-    href: "#download",
+    href: "#steps",
+  },
+];
+
+const steps = [
+  {
+    step: "Step 1",
+    title: "Find a reference",
+    copy: "Choose a photo from curated collections or use your own.",
+  },
+  {
+    step: "Step 2",
+    title: "Open the camera",
+    copy: "Use the reference as a transparent overlay while you frame the shot.",
+  },
+  {
+    step: "Step 3",
+    title: "Take the shot",
+    copy: "Match the pose and composition, capture the photo, and save or share it.",
   },
 ];
 
@@ -230,7 +248,7 @@ export default function Home() {
         <nav aria-label="Primary navigation">
           <a href="#features">Features</a>
           <a href="#faq">FAQ</a>
-          <a href="#download">Get the app</a>
+          <a href="#steps">Get started</a>
         </nav>
       </header>
 
@@ -342,15 +360,25 @@ export default function Home() {
       </section>
 
       <section
-        className="download-section"
-        id="download"
-        aria-labelledby="download-title"
+        className="steps-section"
+        id="steps"
+        aria-labelledby="steps-title"
       >
-        <div>
-          <p className="eyebrow">Ready when the moment is</p>
-          <h2 id="download-title">Spend less time searching. More time living.</h2>
+        <div className="section-copy">
+          <h2 id="steps-title">Get started</h2>
         </div>
-        <StoreActions className="download-actions" />
+
+        <div className="steps-grid">
+          {steps.map((item) => (
+            <article key={item.step}>
+              <p className="step-label">{item.step}</p>
+              <h3>{item.title}</h3>
+              <p>{item.copy}</p>
+            </article>
+          ))}
+        </div>
+
+        <StoreActions className="steps-actions" />
       </section>
     </main>
   );

@@ -145,7 +145,7 @@ img {
 .hero-copy h1,
 .section-copy h1,
 .section-copy h2,
-.download-section h2 {
+.steps-section h2 {
   letter-spacing: 0;
   margin: 0;
 }
@@ -408,7 +408,7 @@ img {
 
 .faq-section,
 .feature-section,
-.download-section {
+.steps-section {
   margin: 0 auto;
   max-width: 1180px;
   padding: 84px clamp(18px, 4vw, 40px);
@@ -427,7 +427,7 @@ img {
 
 .section-copy h1,
 .section-copy h2,
-.download-section h2 {
+.steps-section h2 {
   font-size: clamp(34px, 5vw, 58px);
   font-weight: 950;
   line-height: 1;
@@ -519,26 +519,51 @@ img {
   width: 100%;
 }
 
-.download-section {
-  align-items: center;
-  background: var(--surface-deep);
-  border-radius: 0;
-  color: #ffffff;
-  display: flex;
-  gap: 28px;
-  justify-content: space-between;
+.steps-section {
+  border-top: 1px solid var(--line);
+  display: grid;
+  gap: 34px;
   margin-bottom: 48px;
 }
 
-.download-section .eyebrow {
-  background: var(--accent-gradient);
-  background-clip: text;
-  color: transparent;
-  -webkit-background-clip: text;
+.steps-grid {
+  display: grid;
+  gap: 14px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
-.download-actions {
-  flex: 0 0 auto;
+.steps-grid article {
+  background: rgba(255, 255, 255, 0.78);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 26px;
+}
+
+.step-label {
+  color: var(--accent-solid);
+  font-size: 13px;
+  font-weight: 950;
+  letter-spacing: 0;
+  margin: 0 0 18px;
+  text-transform: uppercase;
+}
+
+.steps-grid h3 {
+  font-size: 24px;
+  font-weight: 950;
+  line-height: 1.1;
+  margin: 0;
+}
+
+.steps-grid p:not(.step-label) {
+  color: var(--muted);
+  font-size: 16px;
+  line-height: 1.58;
+  margin: 14px 0 0;
+}
+
+.steps-actions {
+  margin-top: 2px;
 }
 
 @keyframes photoFade {
@@ -629,18 +654,17 @@ img {
 
   .faq-section,
   .feature-section,
-  .download-section {
+  .steps-section {
     padding-bottom: 64px;
     padding-top: 64px;
   }
 
-  .feature-grid {
+  .feature-grid,
+  .steps-grid {
     grid-template-columns: 1fr;
   }
 
-  .download-section {
-    align-items: stretch;
-    flex-direction: column;
+  .steps-section {
     margin-bottom: 0;
   }
 }

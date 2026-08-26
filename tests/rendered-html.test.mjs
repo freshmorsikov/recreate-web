@@ -33,7 +33,11 @@ test("server-renders the ReCreate landing page", async () => {
   assert.match(html, /Recreate photos/);
   assert.doesNotMatch(html, /Photo inspiration \+ overlay camera/);
   assert.match(html, /Explore curated photo collections/);
-  assert.match(html, /Everything points toward the shot/);
+  assert.match(html, /href="#steps">Get started/);
+  assert.match(html, /Find a reference/);
+  assert.match(html, /Open the camera/);
+  assert.match(html, /Take the shot/);
+  assert.doesNotMatch(html, /Ready when the moment is/);
   assert.doesNotMatch(html, /codex-preview|react-loading-skeleton|Your site is taking shape/i);
 });
 
