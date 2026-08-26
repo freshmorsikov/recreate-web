@@ -563,7 +563,9 @@ img {
 }
 
 .steps-actions {
+  justify-content: center;
   margin-top: 2px;
+  width: 100%;
 }
 
 @keyframes photoFade {
