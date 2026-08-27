@@ -26,17 +26,21 @@ function normalizeSiteUrl(value: string) {
 const basePath = normalizeBasePath(
   process.env.NEXT_PUBLIC_BASE_PATH ?? getGitHubPagesBasePath(),
 );
-const siteUrl = normalizeSiteUrl(
+const configuredSiteUrl = normalizeSiteUrl(
   process.env.NEXT_PUBLIC_SITE_URL ??
     "https://recreate.freshmorsikov.com",
 );
+const siteUrl =
+  basePath && !configuredSiteUrl.endsWith(basePath)
+    ? `${configuredSiteUrl}${basePath}`
+    : configuredSiteUrl;
 
 function withBasePath(path: string) {
   return `${basePath}${path}`;
 }
 
 function withSiteUrl(path: string) {
-  return `${siteUrl}${withBasePath(path)}`;
+  return `${siteUrl}${path}`;
 }
 
 export const site = {

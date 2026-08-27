@@ -40,17 +40,27 @@ jobs:
         run: |
           repo_name="${GITHUB_REPOSITORY#*/}"
           owner="${GITHUB_REPOSITORY_OWNER}"
+          custom_domain=""
 
-          if [[ "${repo_name,,}" == "${owner,,}.github.io" ]]; then
+          if [[ -f public/CNAME ]]; then
+            custom_domain="$(tr -d '[:space:]' < public/CNAME)"
+          fi
+
+          if [[ -n "${custom_domain}" ]]; then
             base_path=""
+            site_url="https://${custom_domain}"
+          elif [[ "${repo_name,,}" == "${owner,,}.github.io" ]]; then
+            base_path=""
+            site_url="https://${owner}.github.io"
           else
             base_path="/${repo_name}"
+            site_url="https://${owner}.github.io${base_path}"
           fi
 
           {
             echo "GITHUB_PAGES=true"
             echo "NEXT_PUBLIC_BASE_PATH=${base_path}"
-            echo "NEXT_PUBLIC_SITE_URL=https://${owner}.github.io${base_path}"
+            echo "NEXT_PUBLIC_SITE_URL=${site_url}"
           } >> "${GITHUB_ENV}"
 
       - name: Build static site
