@@ -52,3 +52,20 @@ test("starter preview code is disconnected", async () => {
   assert.doesNotMatch(layout, /Starter Project|codex-preview|_sites-preview/);
   assert.doesNotMatch(packageJson, /react-loading-skeleton/);
 });
+
+test("static SEO files are exported", async () => {
+  const [robots, sitemap] = await Promise.all([
+    readFile(new URL("../dist/client/robots.txt", import.meta.url), "utf8"),
+    readFile(new URL("../dist/client/sitemap.xml", import.meta.url), "utf8"),
+  ]);
+
+  assert.match(robots, /^User-agent: \*/);
+  assert.match(
+    robots,
+    /Sitemap: https:\/\/recreate-photo\.max-astin17\.chatgpt\.site\/sitemap\.xml/,
+  );
+  assert.match(
+    sitemap,
+    /<loc>https:\/\/recreate-photo\.max-astin17\.chatgpt\.site\/<\/loc>/,
+  );
+});
