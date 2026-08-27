@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://recreate-photo.max-astin17.chatgpt.site/sitemap.xml
