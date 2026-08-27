@@ -61,7 +61,7 @@ const storeButtons = [
   {
     label: "Get ReCreate on Google Play",
     image: "assets/google-play-badge.svg",
-    href: "#steps",
+    href: "https://play.google.com/store/apps/details?id=com.recreate.photo&utm_source=website",
   },
   {
     label: "Download ReCreate on the App Store",
