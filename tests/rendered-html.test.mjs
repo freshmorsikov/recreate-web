@@ -62,10 +62,10 @@ test("static SEO files are exported", async () => {
   assert.match(robots, /^User-agent: \*/);
   assert.match(
     robots,
-    /Sitemap: https:\/\/recreate-photo\.max-astin17\.chatgpt\.site\/sitemap\.xml/,
+    /Sitemap: https:\/\/recreate\.freshmorsikov\.com\/sitemap\.xml/,
   );
   assert.match(
     sitemap,
-    /<loc>https:\/\/recreate-photo\.max-astin17\.chatgpt\.site\/<\/loc>/,
+    /<loc>https:\/\/recreate\.freshmorsikov\.com\/<\/loc>/,
   );
 });

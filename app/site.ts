@@ -28,7 +28,7 @@ const basePath = normalizeBasePath(
 );
 const siteUrl = normalizeSiteUrl(
   process.env.NEXT_PUBLIC_SITE_URL ??
-    "https://recreate-photo.max-astin17.chatgpt.site",
+    "https://recreate.freshmorsikov.com",
 );
 
 function withBasePath(path: string) {
