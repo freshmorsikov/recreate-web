@@ -516,6 +516,15 @@ img {
   gap: 36px;
 }
 
+.ideas-intro {
+  max-width: none;
+  width: 100%;
+}
+
+.ideas-intro p {
+  max-width: none;
+}
+
 .ideas-grid {
   display: grid;
   gap: 14px;
@@ -642,6 +651,13 @@ img {
   justify-content: center;
   margin-top: 2px;
   width: 100%;
+}
+
+@media (min-width: 900px) {
+  .ideas-intro h2,
+  .ideas-intro p {
+    white-space: nowrap;
+  }
 }
 
 @keyframes photoFade {

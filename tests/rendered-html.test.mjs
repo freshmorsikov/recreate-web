@@ -85,6 +85,9 @@ test("server-renders the ReCreate landing page", async () => {
   assert.match(html, /Chilling at home/);
   assert.match(html, /Traveling/);
   assert.match(html, /Mood/);
+  assert.match(html, /Each mood has a distinct visual character/);
+  assert.match(html, /Vacation ideas focus on easy, sunlit photos/);
+  assert.doesNotMatch(html, /dramatic skies/);
   assert.match(html, /assets\/idea-vacation\.jpeg/);
   assert.match(html, /assets\/idea-chilling-at-home\.jpeg/);
   assert.match(html, /assets\/idea-traveling\.jpeg/);

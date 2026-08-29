@@ -80,25 +80,25 @@ const searchIntentGuides = [
 const ideaCollections = [
   {
     title: "Vacation",
-    copy: "Beach days, golden-hour sand shots, poolside portraits, and relaxed vacation photo ideas are easier to recreate when the pose, crop, and sunlight are visible over the camera.",
+    copy: "Vacation ideas focus on easy, sunlit photos that feel relaxed and memorable: beach poses, poolside frames, resort mornings, sunset walks, and warm destination moments.",
     image: "assets/idea-vacation.jpeg",
     imageAlt: "Vacation photo pose on a sunny beach with flowers in hair",
   },
   {
     title: "Chilling at home",
-    copy: "Turn cozy at-home moments into natural photo references: coffee by the window, kitchen light, soft sweaters, mirror shots, and calm everyday poses.",
+    copy: "Chilling at home ideas turn everyday spaces into natural photo references: cozy corners, soft window light, kitchen moments, mirror shots, loungewear, and calm routines.",
     image: "assets/idea-chilling-at-home.jpeg",
     imageAlt: "Chilling at home photo pose holding coffee in a warm kitchen",
   },
   {
     title: "Traveling",
-    copy: "Use travel photo pose ideas for balconies, landmarks, city views, hotel breakfasts, museums, and scenes where the background needs to line up with the subject.",
+    copy: "Traveling ideas help frame the place as part of the story: landmark views, city walks, hotel details, balconies, markets, museums, and photo poses built around movement.",
     image: "assets/idea-traveling.jpeg",
     imageAlt: "Traveling photo pose on a balcony with the Eiffel Tower in the background",
   },
   {
     title: "Mood",
-    copy: "Save mood-based photo references for portraits with dramatic skies, soft expressions, seated poses, quiet landscapes, and composition built around atmosphere.",
+    copy: "Each mood has a distinct visual character: calm photos might use soft light, dreamy photos can feel airy, bold photos need stronger contrast, and nostalgic shots lean warmer.",
     image: "assets/idea-mood.jpeg",
     imageAlt: "Mood portrait pose seated in grass beneath dramatic clouds and a rainbow",
   },
@@ -372,12 +372,11 @@ export default function Home() {
         id="ideas"
         aria-labelledby="ideas-title"
       >
-        <div className="section-copy">
+        <div className="section-copy ideas-intro">
           <h2 id="ideas-title">Photo pose ideas to recreate</h2>
           <p>
             Start with a pose idea, then use the overlay to turn it into a
-            real photo instead of another saved image that stays in your camera
-            roll.
+            real photo you can actually take.
           </p>
         </div>
 
