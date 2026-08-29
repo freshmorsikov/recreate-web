@@ -8,8 +8,9 @@ ReCreate is a landing page for a photo app that helps people recreate photos the
 
 - **Hero**: introduces ReCreate and shows the interactive phone preview.
 - **Key features**: explains how users find a reference, match it live, and get the shot faster.
-- **FAQ**: answers common questions about what ReCreate is and how it works.
+- **Ideas**: highlights photo situations people can browse and recreate, including vacation, home, travel, and mood-based references.
 - **Get started**: gives a short three-step overview and app download buttons.
+- **FAQ**: answers common questions about what ReCreate is and how it works.
 
 ## How to Install
 
