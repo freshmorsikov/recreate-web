@@ -58,25 +58,6 @@ const features = [
   },
 ];
 
-const searchIntentGuides = [
-  {
-    title: "Camera overlay app for matching a reference photo",
-    copy: "Use ReCreate when you already know the photo you want: a travel shot, a saved pose, a creator's frame, or an older photo you want to recreate. The reference sits over the live camera view so you can line up the subject, horizon, distance, and crop before you take the picture.",
-  },
-  {
-    title: "Photo pose overlay app for fewer awkward retakes",
-    copy: "A transparent pose overlay makes it easier for the person behind the camera and the person in the photo to understand the same goal. Instead of saying move left, tilt your head, or raise your hand again and again, you can compare the live shot to the pose reference in the moment.",
-  },
-  {
-    title: "Recreate photo app for before-and-after shots",
-    copy: "ReCreate helps with recreating childhood photos, vacation memories, friend group pictures, maternity shots, engagement photos, and social posts. Choose the original or inspiration image, adjust the overlay opacity, and capture a new version with the same framing.",
-  },
-  {
-    title: "Photo composition reference app for framing and angles",
-    copy: "Good photos are not only about posing. The app also helps you match composition details like where faces sit in the frame, how much background to include, whether the camera is high or low, and where hands, props, buildings, or scenery should land.",
-  },
-];
-
 const ideaCollections = [
   {
     title: "Vacation",
@@ -294,10 +275,9 @@ export default function Home() {
         </a>
         <nav aria-label="Primary navigation">
           <a href="#features">Features</a>
-          <a href="#guides">Guides</a>
           <a href="#ideas">Ideas</a>
-          <a href="#faq">FAQ</a>
           <a href="#steps">Get started</a>
+          <a href="#faq">FAQ</a>
         </nav>
       </header>
 
@@ -343,40 +323,15 @@ export default function Home() {
       </section>
 
       <section
-        className="guide-section"
-        id="guides"
-        aria-labelledby="guides-title"
-      >
-        <div className="section-copy guide-intro">
-          <h2 id="guides-title">Photo overlay guides</h2>
-          <p>
-            ReCreate is built around the search moments people actually have:
-            finding a camera overlay app, lining up a photo pose overlay,
-            recreating a picture, or using a composition reference while the
-            camera is open.
-          </p>
-        </div>
-
-        <div className="guide-list">
-          {searchIntentGuides.map((guide) => (
-            <article key={guide.title}>
-              <h3>{guide.title}</h3>
-              <p>{guide.copy}</p>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      <section
         className="ideas-section"
         id="ideas"
         aria-labelledby="ideas-title"
       >
         <div className="section-copy ideas-intro">
-          <h2 id="ideas-title">Photo pose ideas to recreate</h2>
+          <h2 id="ideas-title">Ideas to recreate</h2>
           <p>
-            Start with a pose idea, then use the overlay to turn it into a
-            real photo you can actually take.
+            Browse inspiring photo ideas for wherever you are and whatever
+            you&apos;re doing, then match the pose, frame, and feeling.
           </p>
         </div>
 
@@ -395,6 +350,28 @@ export default function Home() {
             </article>
           ))}
         </div>
+      </section>
+
+      <section
+        className="steps-section"
+        id="steps"
+        aria-labelledby="steps-title"
+      >
+        <div className="section-copy">
+          <h2 id="steps-title">Get started</h2>
+        </div>
+
+        <div className="steps-grid">
+          {steps.map((item) => (
+            <article key={item.step}>
+              <p className="step-label">{item.step}</p>
+              <h3>{item.title}</h3>
+              <p>{item.copy}</p>
+            </article>
+          ))}
+        </div>
+
+        <StoreActions className="steps-actions" />
       </section>
 
       <section className="faq-section" id="faq" aria-labelledby="faq-title">
@@ -479,27 +456,6 @@ export default function Home() {
         </div>
       </section>
 
-      <section
-        className="steps-section"
-        id="steps"
-        aria-labelledby="steps-title"
-      >
-        <div className="section-copy">
-          <h2 id="steps-title">Get started</h2>
-        </div>
-
-        <div className="steps-grid">
-          {steps.map((item) => (
-            <article key={item.step}>
-              <p className="step-label">{item.step}</p>
-              <h3>{item.title}</h3>
-              <p>{item.copy}</p>
-            </article>
-          ))}
-        </div>
-
-        <StoreActions className="steps-actions" />
-      </section>
     </main>
   );
 }

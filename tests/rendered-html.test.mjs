@@ -76,7 +76,13 @@ test("server-renders the ReCreate landing page", async () => {
   assert.doesNotMatch(html, /Photo inspiration \+ overlay camera/);
   assert.match(html, /Explore curated photo collections/);
   assert.match(html, /href="#steps">Get started/);
-  assert.match(html, /Photo overlay guides/);
+  assert.match(html, /href="#steps">Get started<\/a><a href="#faq">FAQ/);
+  assert.match(
+    html,
+    /<section class="steps-section"[\s\S]*<section class="faq-section"/,
+  );
+  assert.doesNotMatch(html, /href="#guides"/);
+  assert.doesNotMatch(html, /Photo overlay guides/);
   assert.match(html, /camera overlay app/i);
   assert.match(html, /photo pose overlay app/i);
   assert.match(html, /recreate photo app/i);
@@ -85,6 +91,7 @@ test("server-renders the ReCreate landing page", async () => {
   assert.match(html, /Chilling at home/);
   assert.match(html, /Traveling/);
   assert.match(html, /Mood/);
+  assert.match(html, /Browse inspiring photo ideas for wherever you are/);
   assert.match(html, /Each mood has a distinct visual character/);
   assert.match(html, /Vacation ideas focus on easy, sunlit photos/);
   assert.doesNotMatch(html, /dramatic skies/);
