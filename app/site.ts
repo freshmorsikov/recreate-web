@@ -53,10 +53,10 @@ function withSiteUrl(path: string) {
 }
 
 const screenshotPaths = [
-  "/assets/recreate-step-1.jpg",
-  "/assets/recreate-step-2.jpg",
-  "/assets/recreate-step-3.jpg",
-  "/assets/recreate-step-4.jpg",
+  "/assets/recreate-step-1.webp",
+  "/assets/recreate-step-2.webp",
+  "/assets/recreate-step-3.webp",
+  "/assets/recreate-step-4.webp",
 ];
 
 const mobileApplicationStructuredData = {

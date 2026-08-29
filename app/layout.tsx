@@ -70,7 +70,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: site.withSiteUrl("/og.png"),
+        url: site.withSiteUrl("/og.jpg"),
         width: 1200,
         height: 630,
         alt: "ReCreate app camera overlay preview",
@@ -82,7 +82,7 @@ export const metadata: Metadata = {
     title: site.title,
     description:
       "Photo inspiration and a transparent camera overlay for easier recreations.",
-    images: [site.withSiteUrl("/og.png")],
+    images: [site.withSiteUrl("/og.jpg")],
   },
 };
 

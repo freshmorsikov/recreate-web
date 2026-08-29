@@ -99,7 +99,7 @@ test("server-renders the ReCreate landing page", async () => {
   assert.equal(jsonLd.screenshot.length, 4);
   assert.match(
     jsonLd.screenshot[0],
-    /^https:\/\/recreate\.freshmorsikov\.com\/assets\/recreate-step-1\.jpg$/,
+    /^https:\/\/recreate\.freshmorsikov\.com\/assets\/recreate-step-1\.webp$/,
   );
   assert.equal(jsonLd.aggregateRating, undefined);
   assert.equal(jsonLd.review, undefined);
@@ -126,10 +126,10 @@ test("server-renders the ReCreate landing page", async () => {
   assert.match(html, /Each mood has a distinct visual character/);
   assert.match(html, /Vacation ideas focus on easy, sunlit photos/);
   assert.doesNotMatch(html, /dramatic skies/);
-  assert.match(html, /assets\/idea-vacation\.jpeg/);
-  assert.match(html, /assets\/idea-chilling-at-home\.jpeg/);
-  assert.match(html, /assets\/idea-traveling\.jpeg/);
-  assert.match(html, /assets\/idea-mood\.jpeg/);
+  assert.match(html, /assets\/idea-vacation\.webp/);
+  assert.match(html, /assets\/idea-chilling-at-home\.webp/);
+  assert.match(html, /assets\/idea-traveling\.webp/);
+  assert.match(html, /assets\/idea-mood\.webp/);
   assert.match(html, /Find a reference/);
   assert.match(html, /Open the camera/);
   assert.match(html, /Take the shot/);

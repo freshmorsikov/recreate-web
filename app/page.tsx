@@ -15,25 +15,25 @@ const slides: Slide[] = [
     id: "browse",
     collection: "Explore",
     title: ["Explore curated photo collections"],
-    image: "assets/recreate-step-1.jpg",
+    image: "assets/recreate-step-1.webp",
   },
   {
     id: "overlay",
     collection: "Match",
     title: ["Match the shot for the perfect photo"],
-    image: "assets/recreate-step-2.jpg",
+    image: "assets/recreate-step-2.webp",
   },
   {
     id: "pose",
     collection: "One tap",
     title: ["From idea to photo in one tap"],
-    image: "assets/recreate-step-3.jpg",
+    image: "assets/recreate-step-3.webp",
   },
   {
     id: "result",
     collection: "Done",
     title: ["Spend less time searching and more time living"],
-    image: "assets/recreate-step-4.jpg",
+    image: "assets/recreate-step-4.webp",
   },
 ];
 
@@ -62,25 +62,25 @@ const ideaCollections = [
   {
     title: "Vacation",
     copy: "Vacation ideas focus on easy, sunlit photos that feel relaxed and memorable: beach poses, poolside frames, resort mornings, sunset walks, and warm destination moments.",
-    image: "assets/idea-vacation.jpeg",
+    image: "assets/idea-vacation.webp",
     imageAlt: "Vacation photo pose on a sunny beach with flowers in hair",
   },
   {
     title: "Chilling at home",
     copy: "Chilling at home ideas turn everyday spaces into natural photo references: cozy corners, soft window light, kitchen moments, mirror shots, loungewear, and calm routines.",
-    image: "assets/idea-chilling-at-home.jpeg",
+    image: "assets/idea-chilling-at-home.webp",
     imageAlt: "Chilling at home photo pose holding coffee in a warm kitchen",
   },
   {
     title: "Traveling",
     copy: "Traveling ideas help frame the place as part of the story: landmark views, city walks, hotel details, balconies, markets, museums, and photo poses built around movement.",
-    image: "assets/idea-traveling.jpeg",
+    image: "assets/idea-traveling.webp",
     imageAlt: "Traveling photo pose on a balcony with the Eiffel Tower in the background",
   },
   {
     title: "Mood",
     copy: "Each mood has a distinct visual character: calm photos might use soft light, dreamy photos can feel airy, bold photos need stronger contrast, and nostalgic shots lean warmer.",
-    image: "assets/idea-mood.jpeg",
+    image: "assets/idea-mood.webp",
     imageAlt: "Mood portrait pose seated in grass beneath dramatic clouds and a rainbow",
   },
 ];
