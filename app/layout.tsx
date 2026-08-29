@@ -6,14 +6,35 @@ export const metadata: Metadata = {
   title: site.title,
   description: site.description,
   metadataBase: new URL(`${site.siteUrl}/`),
+  alternates: {
+    canonical: site.siteUrl,
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
+  verification: site.googleSiteVerification
+    ? {
+        google: site.googleSiteVerification,
+      }
+    : undefined,
   icons: {
     icon: [{ url: site.withBasePath(site.logoPath), type: "image/webp" }],
-    shortcut: [{ url: site.withBasePath(site.logoPath), type: "image/webp" }],
+    shortcut: site.withBasePath(site.logoPath),
   },
   openGraph: {
     title: site.title,
     description:
       "Browse curated photo ideas, choose a reference, and use it as a transparent camera overlay.",
+    url: site.siteUrl,
+    siteName: "ReCreate",
     type: "website",
     images: [
       {

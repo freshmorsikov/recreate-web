@@ -1,6 +1,8 @@
 const title = "ReCreate - Recreate photos you love";
 const description =
   "ReCreate is a photo inspiration and camera app that helps you match the pose, angle, framing, and composition of photos you love.";
+const googleSiteVerification =
+  process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION?.trim() || undefined;
 
 function normalizeBasePath(value: string | undefined) {
   const normalized = value?.trim().replace(/\/+$/, "") ?? "";
@@ -48,6 +50,7 @@ export const site = {
   description,
   basePath,
   siteUrl,
+  googleSiteVerification,
   logoPath: "/assets/recreate-logo.webp",
   withBasePath,
   withSiteUrl,

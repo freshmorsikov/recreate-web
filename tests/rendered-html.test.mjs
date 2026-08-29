@@ -30,6 +30,19 @@ test("server-renders the ReCreate landing page", async () => {
 
   const html = await response.text();
   assert.match(html, /<title>ReCreate - Recreate photos you love<\/title>/i);
+  assert.match(
+    html,
+    /<link rel="canonical" href="https:\/\/recreate\.freshmorsikov\.com\/"/,
+  );
+  assert.match(html, /<meta name="robots" content="index, follow"/);
+  assert.match(
+    html,
+    /<meta name="googlebot" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"/,
+  );
+  assert.match(
+    html,
+    /<meta property="og:url" content="https:\/\/recreate\.freshmorsikov\.com\/"/,
+  );
   assert.match(html, /Recreate photos/);
   assert.doesNotMatch(html, /Photo inspiration \+ overlay camera/);
   assert.match(html, /Explore curated photo collections/);
@@ -68,4 +81,5 @@ test("static SEO files are exported", async () => {
     sitemap,
     /<loc>https:\/\/recreate\.freshmorsikov\.com\/<\/loc>/,
   );
+  assert.match(sitemap, /<lastmod>2026-08-29<\/lastmod>/);
 });
