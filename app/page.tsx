@@ -1,6 +1,7 @@
 "use client";
 
 import { Fragment, useEffect, useState } from "react";
+import { site } from "./site";
 
 type Slide = {
   id: string;
@@ -61,7 +62,7 @@ const storeButtons = [
   {
     label: "Get ReCreate on Google Play",
     image: "assets/google-play-badge.svg",
-    href: "https://play.google.com/store/apps/details?id=com.recreate.photo&utm_source=website",
+    href: site.googlePlayUrl,
   },
   {
     label: "Download ReCreate on the App Store",

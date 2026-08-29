@@ -1,6 +1,10 @@
 const title = "ReCreate - Recreate photos you love";
+const appName = "ReCreate";
 const description =
   "ReCreate is a photo inspiration and camera app that helps you match the pose, angle, framing, and composition of photos you love.";
+const googlePlayUrl =
+  "https://play.google.com/store/apps/details?id=com.recreate.photo&utm_source=website";
+const logoPath = "/assets/recreate-logo.webp";
 const googleSiteVerification =
   process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION?.trim() || undefined;
 
@@ -45,13 +49,53 @@ function withSiteUrl(path: string) {
   return `${siteUrl}${path}`;
 }
 
+const screenshotPaths = [
+  "/assets/recreate-step-1.jpg",
+  "/assets/recreate-step-2.jpg",
+  "/assets/recreate-step-3.jpg",
+  "/assets/recreate-step-4.jpg",
+];
+
+const mobileApplicationStructuredData = {
+  "@context": "https://schema.org",
+  "@type": ["SoftwareApplication", "MobileApplication"],
+  name: appName,
+  description,
+  url: siteUrl,
+  operatingSystem: "Android",
+  applicationCategory: "MultimediaApplication",
+  applicationSubCategory: "Photo app",
+  image: withSiteUrl(logoPath),
+  screenshot: screenshotPaths.map(withSiteUrl),
+  installUrl: googlePlayUrl,
+  downloadUrl: googlePlayUrl,
+  sameAs: [googlePlayUrl],
+  publisher: {
+    "@type": "Organization",
+    name: appName,
+    url: siteUrl,
+    logo: withSiteUrl(logoPath),
+  },
+  offers: {
+    "@type": "Offer",
+    price: 0,
+    priceCurrency: "USD",
+    url: googlePlayUrl,
+    availability: "https://schema.org/InStock",
+  },
+};
+
 export const site = {
+  appName,
   title,
   description,
+  googlePlayUrl,
   basePath,
   siteUrl,
   googleSiteVerification,
-  logoPath: "/assets/recreate-logo.webp",
+  logoPath,
+  screenshotPaths,
+  mobileApplicationStructuredData,
   withBasePath,
   withSiteUrl,
 };

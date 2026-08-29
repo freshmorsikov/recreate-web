@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { site } from "./site";
 import "./globals.css";
 
+const applicationJsonLd = JSON.stringify(site.mobileApplicationStructuredData);
+
 export const metadata: Metadata = {
   title: site.title,
   description: site.description,
@@ -61,7 +63,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: applicationJsonLd }}
+        />
+        {children}
+      </body>
     </html>
   );
 }

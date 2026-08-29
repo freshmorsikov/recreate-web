@@ -43,6 +43,35 @@ test("server-renders the ReCreate landing page", async () => {
     html,
     /<meta property="og:url" content="https:\/\/recreate\.freshmorsikov\.com\/"/,
   );
+  const jsonLdMatch = html.match(
+    /<script type="application\/ld\+json"[^>]*>(.*?)<\/script>/,
+  );
+  assert.ok(jsonLdMatch, "expected MobileApplication JSON-LD to render");
+
+  const jsonLd = JSON.parse(jsonLdMatch[1]);
+  assert.deepEqual(jsonLd["@type"], ["SoftwareApplication", "MobileApplication"]);
+  assert.equal(jsonLd.name, "ReCreate");
+  assert.equal(jsonLd.operatingSystem, "Android");
+  assert.equal(jsonLd.applicationCategory, "MultimediaApplication");
+  assert.equal(
+    jsonLd.installUrl,
+    "https://play.google.com/store/apps/details?id=com.recreate.photo&utm_source=website",
+  );
+  assert.deepEqual(jsonLd.offers, {
+    "@type": "Offer",
+    price: 0,
+    priceCurrency: "USD",
+    url: "https://play.google.com/store/apps/details?id=com.recreate.photo&utm_source=website",
+    availability: "https://schema.org/InStock",
+  });
+  assert.equal(jsonLd.publisher.name, "ReCreate");
+  assert.equal(jsonLd.screenshot.length, 4);
+  assert.match(
+    jsonLd.screenshot[0],
+    /^https:\/\/recreate\.freshmorsikov\.com\/assets\/recreate-step-1\.jpg$/,
+  );
+  assert.equal(jsonLd.aggregateRating, undefined);
+  assert.equal(jsonLd.review, undefined);
   assert.match(html, /Recreate photos/);
   assert.doesNotMatch(html, /Photo inspiration \+ overlay camera/);
   assert.match(html, /Explore curated photo collections/);
