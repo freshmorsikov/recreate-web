@@ -1,5 +1,7 @@
 # 📷 ReCreate web
 
+![ReCreate Open Graph preview](public/og.png)
+
 ReCreate is a landing page for a photo app that helps people recreate photos they love. The page explains the app, highlights the main features, answers common questions, and points visitors toward the App Store and Google Play.
 
 ## Sections
