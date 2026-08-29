@@ -145,6 +145,7 @@ img {
 .hero-copy h1,
 .section-copy h1,
 .section-copy h2,
+.guide-list h3,
 .steps-section h2 {
   letter-spacing: 0;
   margin: 0;
@@ -408,13 +409,17 @@ img {
 
 .faq-section,
 .feature-section,
+.guide-section,
+.ideas-section,
 .steps-section {
   margin: 0 auto;
   max-width: 1180px;
   padding: 84px clamp(18px, 4vw, 40px);
 }
 
-.faq-section {
+.faq-section,
+.guide-section,
+.ideas-section {
   border-top: 1px solid var(--line);
   display: grid;
   gap: 28px;
@@ -470,6 +475,77 @@ img {
   font-size: 17px;
   line-height: 1.62;
   margin: 14px 0 0;
+}
+
+.guide-section {
+  gap: 42px;
+}
+
+.guide-intro {
+  max-width: 760px;
+}
+
+.guide-list {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.guide-list article {
+  background: rgba(255, 255, 255, 0.78);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 28px;
+}
+
+.guide-list h3 {
+  font-size: clamp(23px, 3vw, 34px);
+  font-weight: 950;
+  line-height: 1.08;
+}
+
+.guide-list p,
+.ideas-grid p {
+  color: var(--muted);
+  font-size: 16px;
+  line-height: 1.62;
+  margin: 14px 0 0;
+}
+
+.ideas-section {
+  gap: 36px;
+}
+
+.ideas-grid {
+  display: grid;
+  gap: 14px;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.ideas-grid article {
+  background: rgba(255, 255, 255, 0.78);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  min-height: 100%;
+  overflow: hidden;
+}
+
+.ideas-grid h3 {
+  font-size: 22px;
+  font-weight: 950;
+  line-height: 1.12;
+  margin: 0;
+}
+
+.idea-image {
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  object-position: center;
+  width: 100%;
+}
+
+.idea-card-copy {
+  padding: 22px;
 }
 
 .feature-grid {
@@ -601,6 +677,10 @@ img {
   .phone-screen {
     min-height: 580px;
   }
+
+  .ideas-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
 
 @media (max-width: 760px) {
@@ -656,12 +736,16 @@ img {
 
   .faq-section,
   .feature-section,
+  .guide-section,
+  .ideas-section,
   .steps-section {
     padding-bottom: 64px;
     padding-top: 64px;
   }
 
   .feature-grid,
+  .guide-list,
+  .ideas-grid,
   .steps-grid {
     grid-template-columns: 1fr;
   }

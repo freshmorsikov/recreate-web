@@ -58,6 +58,52 @@ const features = [
   },
 ];
 
+const searchIntentGuides = [
+  {
+    title: "Camera overlay app for matching a reference photo",
+    copy: "Use ReCreate when you already know the photo you want: a travel shot, a saved pose, a creator's frame, or an older photo you want to recreate. The reference sits over the live camera view so you can line up the subject, horizon, distance, and crop before you take the picture.",
+  },
+  {
+    title: "Photo pose overlay app for fewer awkward retakes",
+    copy: "A transparent pose overlay makes it easier for the person behind the camera and the person in the photo to understand the same goal. Instead of saying move left, tilt your head, or raise your hand again and again, you can compare the live shot to the pose reference in the moment.",
+  },
+  {
+    title: "Recreate photo app for before-and-after shots",
+    copy: "ReCreate helps with recreating childhood photos, vacation memories, friend group pictures, maternity shots, engagement photos, and social posts. Choose the original or inspiration image, adjust the overlay opacity, and capture a new version with the same framing.",
+  },
+  {
+    title: "Photo composition reference app for framing and angles",
+    copy: "Good photos are not only about posing. The app also helps you match composition details like where faces sit in the frame, how much background to include, whether the camera is high or low, and where hands, props, buildings, or scenery should land.",
+  },
+];
+
+const ideaCollections = [
+  {
+    title: "Vacation",
+    copy: "Beach days, golden-hour sand shots, poolside portraits, and relaxed vacation photo ideas are easier to recreate when the pose, crop, and sunlight are visible over the camera.",
+    image: "assets/idea-vacation.jpeg",
+    imageAlt: "Vacation photo pose on a sunny beach with flowers in hair",
+  },
+  {
+    title: "Chilling at home",
+    copy: "Turn cozy at-home moments into natural photo references: coffee by the window, kitchen light, soft sweaters, mirror shots, and calm everyday poses.",
+    image: "assets/idea-chilling-at-home.jpeg",
+    imageAlt: "Chilling at home photo pose holding coffee in a warm kitchen",
+  },
+  {
+    title: "Traveling",
+    copy: "Use travel photo pose ideas for balconies, landmarks, city views, hotel breakfasts, museums, and scenes where the background needs to line up with the subject.",
+    image: "assets/idea-traveling.jpeg",
+    imageAlt: "Traveling photo pose on a balcony with the Eiffel Tower in the background",
+  },
+  {
+    title: "Mood",
+    copy: "Save mood-based photo references for portraits with dramatic skies, soft expressions, seated poses, quiet landscapes, and composition built around atmosphere.",
+    image: "assets/idea-mood.jpeg",
+    imageAlt: "Mood portrait pose seated in grass beneath dramatic clouds and a rainbow",
+  },
+];
+
 const storeButtons = [
   {
     label: "Get ReCreate on Google Play",
@@ -248,6 +294,8 @@ export default function Home() {
         </a>
         <nav aria-label="Primary navigation">
           <a href="#features">Features</a>
+          <a href="#guides">Guides</a>
+          <a href="#ideas">Ideas</a>
           <a href="#faq">FAQ</a>
           <a href="#steps">Get started</a>
         </nav>
@@ -294,6 +342,62 @@ export default function Home() {
         </div>
       </section>
 
+      <section
+        className="guide-section"
+        id="guides"
+        aria-labelledby="guides-title"
+      >
+        <div className="section-copy guide-intro">
+          <h2 id="guides-title">Photo overlay guides</h2>
+          <p>
+            ReCreate is built around the search moments people actually have:
+            finding a camera overlay app, lining up a photo pose overlay,
+            recreating a picture, or using a composition reference while the
+            camera is open.
+          </p>
+        </div>
+
+        <div className="guide-list">
+          {searchIntentGuides.map((guide) => (
+            <article key={guide.title}>
+              <h3>{guide.title}</h3>
+              <p>{guide.copy}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section
+        className="ideas-section"
+        id="ideas"
+        aria-labelledby="ideas-title"
+      >
+        <div className="section-copy">
+          <h2 id="ideas-title">Photo pose ideas to recreate</h2>
+          <p>
+            Start with a pose idea, then use the overlay to turn it into a
+            real photo instead of another saved image that stays in your camera
+            roll.
+          </p>
+        </div>
+
+        <div className="ideas-grid">
+          {ideaCollections.map((collection) => (
+            <article key={collection.title}>
+              <img
+                className="idea-image"
+                src={collection.image}
+                alt={collection.imageAlt}
+              />
+              <div className="idea-card-copy">
+                <h3>{collection.title}</h3>
+                <p>{collection.copy}</p>
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+
       <section className="faq-section" id="faq" aria-labelledby="faq-title">
         <div className="section-copy faq-intro">
           <h1 id="faq-title">Frequently asked questions</h1>
@@ -325,6 +429,22 @@ export default function Home() {
               ReCreate&apos;s camera. The reference appears as a transparent
               overlay, helping you position the camera and subject more
               accurately.
+            </p>
+          </article>
+          <article>
+            <h2>Is ReCreate a camera overlay app?</h2>
+            <p>
+              Yes. ReCreate lets you place a reference photo over the camera
+              preview, then change the opacity so you can match the pose,
+              angle, framing, and composition before taking the picture.
+            </p>
+          </article>
+          <article>
+            <h2>Can ReCreate help with couple and travel photo pose ideas?</h2>
+            <p>
+              Yes. ReCreate is useful for couple photo pose ideas, travel photo
+              pose ideas, solo portraits, group photos, and any shot where a
+              visual reference is easier than explaining the pose from memory.
             </p>
           </article>
           <article>

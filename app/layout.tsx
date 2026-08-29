@@ -7,6 +7,18 @@ const applicationJsonLd = JSON.stringify(site.mobileApplicationStructuredData);
 export const metadata: Metadata = {
   title: site.title,
   description: site.description,
+  keywords: [
+    "camera overlay app",
+    "photo pose overlay app",
+    "recreate photo app",
+    "photo composition reference app",
+    "couple photo pose ideas",
+    "travel photo pose ideas",
+    "vacation photo ideas",
+    "at home photo ideas",
+    "traveling photo ideas",
+    "mood photo ideas",
+  ],
   metadataBase: new URL(`${site.siteUrl}/`),
   alternates: {
     canonical: site.siteUrl,
