@@ -5,6 +5,9 @@ const description =
 const googlePlayUrl =
   "https://play.google.com/store/apps/details?id=com.recreate.photo&utm_source=website";
 const logoPath = "/assets/recreate-logo.webp";
+const faviconPath = "/favicon.ico";
+const faviconPngPath = "/favicon-96x96.png";
+const appleTouchIconPath = "/apple-touch-icon.png";
 const googleSiteVerification =
   process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION?.trim() || undefined;
 
@@ -94,6 +97,9 @@ export const site = {
   siteUrl,
   googleSiteVerification,
   logoPath,
+  faviconPath,
+  faviconPngPath,
+  appleTouchIconPath,
   screenshotPaths,
   mobileApplicationStructuredData,
   withBasePath,

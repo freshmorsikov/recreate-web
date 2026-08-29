@@ -43,6 +43,37 @@ test("server-renders the ReCreate landing page", async () => {
     html,
     /<meta property="og:url" content="https:\/\/recreate\.freshmorsikov\.com\/"/,
   );
+  assert.doesNotMatch(html, /href="\/favicon\.svg"/);
+  const linkTags = html.match(/<link\b[^>]*>/g) ?? [];
+  assert.ok(
+    linkTags.some(
+      (tag) =>
+        /rel="icon"/.test(tag) &&
+        /href="\/favicon\.ico"/.test(tag) &&
+        /sizes="48x48"/.test(tag) &&
+        /type="image\/x-icon"/.test(tag),
+    ),
+    "expected a root favicon.ico link for search crawlers",
+  );
+  assert.ok(
+    linkTags.some(
+      (tag) =>
+        /rel="icon"/.test(tag) &&
+        /href="\/favicon-96x96\.png"/.test(tag) &&
+        /sizes="96x96"/.test(tag) &&
+        /type="image\/png"/.test(tag),
+    ),
+    "expected a crawlable 96x96 PNG favicon link",
+  );
+  assert.ok(
+    linkTags.some(
+      (tag) =>
+        /rel="apple-touch-icon"/.test(tag) &&
+        /href="\/apple-touch-icon\.png"/.test(tag) &&
+        /sizes="180x180"/.test(tag),
+    ),
+    "expected an apple touch icon link",
+  );
   const jsonLdMatch = html.match(
     /<script type="application\/ld\+json"[^>]*>(.*?)<\/script>/,
   );
@@ -119,9 +150,13 @@ test("starter preview code is disconnected", async () => {
 });
 
 test("static SEO files are exported", async () => {
-  const [robots, sitemap] = await Promise.all([
+  const [robots, sitemap, faviconIco, faviconPng, appleTouchIcon] =
+    await Promise.all([
     readFile(new URL("../dist/client/robots.txt", import.meta.url), "utf8"),
     readFile(new URL("../dist/client/sitemap.xml", import.meta.url), "utf8"),
+    readFile(new URL("../dist/client/favicon.ico", import.meta.url)),
+    readFile(new URL("../dist/client/favicon-96x96.png", import.meta.url)),
+    readFile(new URL("../dist/client/apple-touch-icon.png", import.meta.url)),
   ]);
 
   assert.match(robots, /^User-agent: \*/);
@@ -134,4 +169,7 @@ test("static SEO files are exported", async () => {
     /<loc>https:\/\/recreate\.freshmorsikov\.com\/<\/loc>/,
   );
   assert.match(sitemap, /<lastmod>2026-08-29<\/lastmod>/);
+  assert.ok(faviconIco.byteLength > 0);
+  assert.equal(faviconPng.subarray(1, 4).toString("ascii"), "PNG");
+  assert.equal(appleTouchIcon.subarray(1, 4).toString("ascii"), "PNG");
 });

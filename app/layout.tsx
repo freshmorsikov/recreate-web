@@ -40,8 +40,26 @@ export const metadata: Metadata = {
       }
     : undefined,
   icons: {
-    icon: [{ url: site.withBasePath(site.logoPath), type: "image/webp" }],
-    shortcut: site.withBasePath(site.logoPath),
+    icon: [
+      {
+        url: site.withBasePath(site.faviconPath),
+        sizes: "48x48",
+        type: "image/x-icon",
+      },
+      {
+        url: site.withBasePath(site.faviconPngPath),
+        sizes: "96x96",
+        type: "image/png",
+      },
+    ],
+    shortcut: site.withBasePath(site.faviconPath),
+    apple: [
+      {
+        url: site.withBasePath(site.appleTouchIconPath),
+        sizes: "180x180",
+        type: "image/png",
+      },
+    ],
   },
   openGraph: {
     title: site.title,
