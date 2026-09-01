@@ -1,0 +1,8 @@
+# ReCreate app-ads.txt (IAB Tech Lab app-ads.txt v1.0)
+#
+# Authorises Google AdMob to sell ad inventory in ReCreate. The publisher ID is a
+# public value: it is served from this domain and printed in AdMob's own sellers.json.
+#
+# This file must stay reachable at the domain listed as the developer website on BOTH
+# store listings, or AdMob cannot verify it and the inventory stays unauthorised.
+google.com, pub-8401632791879027, DIRECT, f08c47fec0942fa0
