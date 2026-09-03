@@ -3,7 +3,7 @@ const appName = "ReCreate";
 const description =
   "ReCreate is a photo inspiration and camera app that helps you match the pose, angle, framing, and composition of photos you love.";
 const googlePlayUrl =
-  "https://play.google.com/store/apps/details?id=com.recreate.photo&utm_source=website";
+  "https://play.google.com/store/apps/details?id=com.recreate.photo&referrer=utm_source%3Dwebsite";
 const logoPath = "/assets/recreate-logo.webp";
 const faviconPath = "/favicon.ico";
 const faviconPngPath = "/favicon-96x96.png";

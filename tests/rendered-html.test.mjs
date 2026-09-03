@@ -86,13 +86,13 @@ test("server-renders the ReCreate landing page", async () => {
   assert.equal(jsonLd.applicationCategory, "MultimediaApplication");
   assert.equal(
     jsonLd.installUrl,
-    "https://play.google.com/store/apps/details?id=com.recreate.photo&utm_source=website",
+    "https://play.google.com/store/apps/details?id=com.recreate.photo&referrer=utm_source%3Dwebsite",
   );
   assert.deepEqual(jsonLd.offers, {
     "@type": "Offer",
     price: 0,
     priceCurrency: "USD",
-    url: "https://play.google.com/store/apps/details?id=com.recreate.photo&utm_source=website",
+    url: "https://play.google.com/store/apps/details?id=com.recreate.photo&referrer=utm_source%3Dwebsite",
     availability: "https://schema.org/InStock",
   });
   assert.equal(jsonLd.publisher.name, "ReCreate");
