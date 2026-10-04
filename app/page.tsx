@@ -14,19 +14,19 @@ const slides: Slide[] = [
   {
     id: "browse",
     collection: "Explore",
-    title: ["Explore curated photo collections"],
+    title: ["Explore inspiring photo ideas"],
     image: "assets/recreate-step-1.webp",
   },
   {
     id: "overlay",
     collection: "Match",
-    title: ["Match the shot for the perfect photo"],
+    title: ["Match the shot perfectly"],
     image: "assets/recreate-step-2.webp",
   },
   {
     id: "pose",
     collection: "One tap",
-    title: ["From idea to photo in one tap"],
+    title: ["Never wonder how to pose"],
     image: "assets/recreate-step-3.webp",
   },
   {
