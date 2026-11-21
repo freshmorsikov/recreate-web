@@ -92,9 +92,8 @@ const storeButtons = [
     href: site.googlePlayUrl,
   },
   {
-    label: "Download ReCreate on the App Store",
+    label: "ReCreate on the App Store, coming soon",
     image: "assets/app-store-badge.svg",
-    href: "#steps",
   },
 ];
 
@@ -121,15 +120,24 @@ const AUTO_SWIPE_DELAY_MS = 10000;
 function StoreActions({ className = "" }: { className?: string }) {
   return (
     <div className={`store-actions ${className}`.trim()}>
-      {storeButtons.map((button) => (
+      {storeButtons.map((button) => button.href ? (
         <a
           className="store-badge-button"
           href={button.href}
+          target="_blank"
+          rel="noopener noreferrer"
           key={button.label}
           aria-label={button.label}
         >
           <img src={button.image} alt="" aria-hidden="true" />
         </a>
+      ) : (
+        <div className="store-badge-upcoming" key={button.label} aria-label={button.label}>
+          <span className="store-badge-button store-badge-disabled">
+            <img src={button.image} alt="" aria-hidden="true" />
+          </span>
+          <span aria-hidden="true">Coming soon</span>
+        </div>
       ))}
     </div>
   );
